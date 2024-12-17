@@ -1,0 +1,74 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: beige;
+  padding-bottom: 10vmin;
+}
+
+#board {
+  background-color: red;
+  display: grid;
+  max-width: 80%;
+  max-height: 40%;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.cell {
+  background-color: blue;
+  border: 1px solid black;
+  text-align: center;
+  color: black;
+  font-size: 150%;
+  display: flex;
+}
+
+.highlight {
+  background-color: white;
+}
+
+#submitButton {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+#resetButton {
+  position: absolute;
+  top: 25%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
+#sizeSelect {
+  position: absolute;
+  top: 12.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#helpButton {
+  position: absolute;
+  top: 1%;
+  left: 99%;
+  height: 5vmin;
+  width: 5vmin;
+  transform: translate(-100%, 0%);
+  z-index: 3;
+}
+
+#helpPopup {
+  position: absolute;
+  background-color: #f5f5f5;
+  display: none;
+  z-index: 2;
+  text-align: center;
+  font-size: 1.5em;
+  width: 90%;
+  top: 1%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
