@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  
+</head>
+
+<body>
+  <div id="board"></div>
+  
+  <div id="sizeSelect">
+    <label>Board Size:</label>
+    <select onchange="boardSizeChanged(this.value)">
+      <option value="0">5x5</option>
+      <option value="1" selected="selected">5x10</option>
+      <option value="2">5x15</option>
+      <option value="3">10x10</option>
+      <option value="4">10x15</option>
+      <option value="5">15x15</option>
+    </select>
+  </div>
+  
+  <button onclick="submitButton()" id="submitButton">Submit</button>
+  <button onclick="resetBoard()" id="resetButton">Reset</button>
+
+  <button id="helpButton" onclick="helpButton()">?</button>
+  <div id="helpPopup">
+    <h2>Gerrymandering Puzzle:</h2>
+    Your Purple party has a minority in this election, but luckily you've been given the power to draw the county map however you see fit!<br><br>
+    Each county must consist of the same number of districts, and cannot contain a tie.<br><br>
+    All districts in a county must connect to each other orthogonally.<br><br>
+    Use the submit button to submit a county, the reset button to reset the board, and ctrl+z or ctrl+y to undo and redo your last submissions.<br><br>
+    Some puzzles may be impossible to solve.<br><br>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
