@@ -272,6 +272,7 @@ function resetBoard(askReset = true) {
   BoardState = [];
   SubmittedCounties = [];
   CountySize = -1;
+  CanChangeCountySize = true;
   populateGrid();
   if(askReset) setCurrentPuzzle();
   else generatePuzzle();
