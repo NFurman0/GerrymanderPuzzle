@@ -271,6 +271,7 @@ function resetBoard(askReset = true) {
   Board.innerHTML = "";
   BoardState = [];
   SubmittedCounties = [];
+  SubmittedCountyIndex = -1;
   CountySize = -1;
   CanChangeCountySize = true;
   populateGrid();
