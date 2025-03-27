@@ -1,7 +1,7 @@
 const Board = document.getElementById("board");
 const HelpPopup = document.getElementById("helpPopup");
 const BoardLengths = [[5,5], [5,10], [5,15], [10,10], [10,15], [15,15]];
-const ColorAmounts = [[16,9], [32, 18], [51, 24], [67, 33], [102, 48], [161, 64]];
+const ColorAmounts = [[16,9], [32, 18], [51, 24], [64, 36], [102, 48], [161, 64]];
 //ColorAmounts holds the amount of purple and yellow tiles for a puzzle of each size
 var CurrentBoardType = 1; //The index for BoardLengths/ColorAmounts
 var Parties = ["gold", "mediumpurple"];
