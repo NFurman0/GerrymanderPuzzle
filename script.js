@@ -7,7 +7,7 @@ var CurrentBoardType = 1; //The index for BoardLengths/ColorAmounts
 var Parties = ["gold", "mediumpurple"];
 var Height = 5;
 var Width = 10; //Height and Width are redundant but easier to read, these are always set to the corresponding values in BoardLengths
-var BoardState = []; //Used to track which tiles are currently selected, and which have already been submitted.
+var BoardState = []; //Used to track which tiles are currently selected, and which have already been submitted. 0 for default, 1 for selected, -1 for submitted.
 var SubmittedCounties = []; //A list of each submission
 var SubmittedCountyIndex = -1; //Index of the last submission active, when using ctrl+z submissions are not removed from SubmittedCounties to allow redoing them with ctrl+y
 var CountySize = -1; //All counties must be the same size, determined by the first one entered.
@@ -22,6 +22,9 @@ function keyPressHandler(event) {
     }
     else if(event.key == 'y') {
       redoSubmission();
+    }
+    else if(event.key == 'd') {
+      deselectAll();
     }
   }
 }
@@ -295,6 +298,16 @@ function redoSubmission() {
   setSubmittedCounty(SubmittedCounties[SubmittedCountyIndex+1]);
 
   if(SubmittedCountyIndex == 0) CanChangeCountySize = false;
+}
+
+//unselects all selected tiles, does not affect submitted counties
+function deselectAll() {
+  for(var y = 0; y < Height; y++) {
+    for(var x = 0; x < Width; x++) {
+      Board.children[y*Width + x].children[0].style.opacity = "0%";
+      BoardState[y][x] = 0;
+    }
+  }
 }
 
 //Called by the help button, toggles the help popup.
