@@ -24,6 +24,7 @@ function keyPressHandler(event) {
       redoSubmission();
     }
     else if(event.key == 'd') {
+      event.preventDefault(); //ctrl d is used to save bookmarks in some browsers
       deselectAll();
     }
   }
