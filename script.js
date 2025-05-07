@@ -305,6 +305,7 @@ function redoSubmission() {
 function deselectAll() {
   for(var y = 0; y < Height; y++) {
     for(var x = 0; x < Width; x++) {
+      if(!Board.children[y*Width + x].children[0]) continue; //skip tiles without highlight
       Board.children[y*Width + x].children[0].style.opacity = "0%";
       BoardState[y][x] = 0;
     }
